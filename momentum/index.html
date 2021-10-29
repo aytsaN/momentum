@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player hide none" data-app-name="player">
+      <div class="player-info">
+        <div class="player-controls">
+          <button class="play-prev player-icon icon"></button>
+          <button class="play player-icon icon"></button>
+          <button class="play-next player-icon icon"></button>
+        </div>
+        <div class="progress">
+          <input type="range" id="progressRange" min="0" max="100" step="1" value="0" data-content="">
+          <div class="duration-time">
+            <div class="timer">00:00</div>
+            <div class="duration">00:00</div>
+          </div>
+        </div>
+        <div class="volume">
+          <div class="volume-icon icon"></div>
+          <input type="range" id="soundVoulume" min="0" max="1" step="0.1" value="0.6">
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+    <div class="weather hide none" data-app-name="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon icon"></button>
+      <button class="slide-next slider-icon icon"></button>
+    </div>
+    <time class="time hide none" data-app-name="time"></time>
+    <date class="date hide none" data-app-name="date"></date>
+    <div class="greeting-container hide none" data-app-name="greeting">
+      <span class="greeting"></span>
+      <input type="text" class="name"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="info-container">
+      <span class="settings-icon icon"></span>
+      <a href="https://rs.school/js/" class="rss-link" target="_blank">
+        <img src="assets/svg/rs_school_js.svg" alt="RSS" class="rss-ico" width="50" height="18">
+      </a>
+      <div class="copy">© 2021 by <a href="https://github.com/aytsaN" target="_blank">aytsaN</a></div>
+    </div>
+    <div class="quote-container hide none" data-app-name="quote">
+      <button class="change-quote icon"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+  </footer>
+  <div class="settings-app hide none">
+    <div class="settings-header">
+      <h3 class="general-header">General Settings</h3>
+      <p class="description">Customize your dashboard</p>
+    </div>
+    <h4>Show</h4>
+    <ul class="apps-list settings-list">
+      <li class="slide-toggle">
+        <input type="checkbox" name="time">
+        <span class="setting-name">Time</span>
+        <span class="toggle-slider">
+          <svg class="toggle-switch" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+        </span>
+      </li>
+      <li class="slide-toggle">
+        <input type="checkbox" name="date">
+        <span class="setting-name">Date</span>
+        <span class="toggle-slider">
+          <svg class="toggle-switch" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+        </span>
+      </li>
+      <li class="slide-toggle">
+        <input type="checkbox" name="greeting">
+        <span class="setting-name">Greeting</span>
+        <span class="toggle-slider">
+          <svg class="toggle-switch" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+        </span>
+      </li>
+      <li class="slide-toggle">
+        <input type="checkbox" name="quote">
+        <span class="setting-name">Quote</span>
+        <span class="toggle-slider">
+          <svg class="toggle-switch" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+        </span>
+      </li>
+      <li class="slide-toggle">
+        <input type="checkbox" name="weather">
+        <span class="setting-name">Weather</span>
+        <span class="toggle-slider">
+          <svg class="toggle-switch" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+        </span>
+      </li>
+      <li class="slide-toggle">
+        <input type="checkbox" name="player">
+        <span class="setting-name">Player</span>
+        <span class="toggle-slider">
+          <svg class="toggle-switch" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"></circle></svg>
+        </span>
+      </li>
+    </ul>
+    <h4>Appearance</h4>
+    <ul class="customize-list settings-list">
+      <li class="slide-toggle custom-lang-toggle">
+        <span class="setting-name">Language</span>
+        <span class="toggle-options">
+          <span class="toggle-option" data-option="en"><span class="toggle-label">English</span></span>
+          <span class="toggle-divider">|</span>
+          <span class="toggle-option" data-option="ru"><span class="toggle-label">Русский</span></span>
+        </span>
+      </li>
+      <li class="slide-toggle custom-bg-toggle">
+        <span class="setting-name">Background source</span>
+        <span class="toggle-options">
+          <span class="toggle-option" data-option="github"><span class="toggle-label">GitHub</span></span>
+          <span class="toggle-divider">|</span>
+          <span class="toggle-option" data-option="unsplash"><span class="toggle-label">Unsplash API</span></span>
+          <span class="toggle-divider">|</span>
+          <span class="toggle-option" data-option="flickr"><span class="toggle-label">Flickr API</span></span>
+        </span>
+      </li>
+      <li class="slide-toggle custom-bg-tag-toggle hide">
+        <span class="setting-name">Add bachground tag</span>
+        <span class="toggle-options">
+          <input type="text" name="tag" id="bgTag">
+        </span>
+      </li>
+    </ul>
+  </div>
+  <script type="module" src="js/script.js"></script>
+  <script type="module" src="js/audioplayer.js"></script>
+  <script src="js/logs.js"></script>
+</body>
+</html>
