@@ -1,6 +1,7 @@
 # Momentum
 
-Deploy: https://aytsan.github.io/momentum/momentum/
+Deploy GitHub: https://aytsan.github.io/momentum/momentum/
+Deploy Netify: https://aytsan-momentum.netlify.app/
 
 Momentum is an analogue of the same name app in the Chrome web store.  
 The app shows the time and username; the background image and greeting change depending on the time of day.  
